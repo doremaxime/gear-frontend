@@ -1,5 +1,7 @@
 'use strict';
 
+const events = require('../crud/events.js');
+
 const signUpSuccess = () => {
   $('.landing-page-message').text('success, please sign in.')
   $('.clear-input').val('');
@@ -15,6 +17,7 @@ const signInSuccess = () => {
   $('.landing-page-container').css('display', 'none');
   $('.home-view').css('display', 'unset');
   $('.clear-input').val('');
+  events.onIndex();
 };
 
 const signInFailure = () => {
