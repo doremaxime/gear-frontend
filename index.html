@@ -18,15 +18,15 @@
 <div class="landing-page-container">
 
   <form class="sign-up">
-      <input class="clear-input" type="email" name="credentials[email]" value="" placeholder="example@example.com">
-      <input class="clear-input" type="password" name="credentials[password]" value="" placeholder="password">
-      <input class="clear-input" type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
+      <input class="clear-input" type="email" pattern=".{1,}" required title="1 characters minimum" name="credentials[email]" value="" placeholder="example@example.com">
+      <input class="clear-input" type="password" pattern=".{1,}" required title="1 characters minimum" name="credentials[password]" value="" placeholder="password">
+      <input class="clear-input" type="password" pattern=".{1,}" required title="1 characters minimum" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
       <input type="submit" name="submit" value="Submit">
   </form>
 
   <form class="sign-in">
-      <input class="clear-input" type="email" name="credentials[email]" value="" placeholder="example@example.com">
-      <input class="clear-input" type="password" name="credentials[password]" value="" placeholder="password">
+      <input class="clear-input" type="email" pattern=".{1,}" required title="1 characters minimum" name="credentials[email]" value="" placeholder="example@example.com">
+      <input class="clear-input" type="password" pattern=".{1,}" required title="1 characters minimum" name="credentials[password]" value="" placeholder="password">
         <input type="submit" name="submit" value="Submit">
   </form>
 
