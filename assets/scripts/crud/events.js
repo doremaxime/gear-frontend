@@ -1,65 +1,65 @@
-'use strict';
+'use strict'
 
-const getFormFields = require(`../../../lib/get-form-fields`);
-const api = require('./api');
-const ui = require('./ui');
+const getFormFields = require(`../../../lib/get-form-fields`)
+const api = require('./api')
+const ui = require('./ui')
 
 // Gets all the gear
-const onIndex = function() {
-  console.log('index');
+const onIndex = function () {
+  console.log('index')
   api.index()
     .then(ui.indexSuccess)
-    .catch(ui.indexFailure);
-};
+    .catch(ui.indexFailure)
+}
 
 // Creates a new gear
-const onCreate = function(event) {
-  event.preventDefault();
+const onCreate = function (event) {
+  event.preventDefault()
 
-  let data = getFormFields(event.target);
+  const data = getFormFields(event.target)
 
   api.create(data)
     .then(ui.createSuccess)
     .then(onIndex)
-    .catch(ui.createFailure);
-};
+    .catch(ui.createFailure)
+}
 
 // Updates a gear
-const onUpdate = function(event) {
-  event.preventDefault();
+const onUpdate = function (event) {
+  event.preventDefault()
 
-  let id = $(event.target).data('climb');
-  let userInput = getFormFields(event.target);
+  const id = $(event.target).data('climb')
+  const userInput = getFormFields(event.target)
 
   api.update(userInput, id)
     .then(ui.updateSuccess(id))
     .then(onIndex)
-    .catch(ui.updateFailure);
-};
+    .catch(ui.updateFailure)
+}
 
 // Deletes a gear
-const onDestroy = function(event) {
-  event.preventDefault();
+const onDestroy = function (event) {
+  event.preventDefault()
 
-  let id = $(event.target).data('id');
+  const id = $(event.target).data('id')
 
   api.destroy(id)
     .then(ui.destroySuccess(id))
     .then(onIndex)
-    .catch(ui.destroyFailure);
-};
+    .catch(ui.destroyFailure)
+}
 
 // user can clck to create, update, or delete a gear.
 const addHandlers = () => {
-  $('.create-climb').on('submit', onCreate);
-  $('.index').on('submit', '.update-climb', onUpdate);
-  $('.index').on('click', '.destroy', onDestroy);
-};
+  $('.create-climb').on('submit', onCreate)
+  $('.index').on('submit', '.update-climb', onUpdate)
+  $('.index').on('click', '.destroy', onDestroy)
+}
 
 module.exports = {
   onIndex,
   onCreate,
   onUpdate,
   onDestroy,
-  addHandlers,
-};
+  addHandlers
+}
