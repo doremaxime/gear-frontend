@@ -1,6 +1,25 @@
-<h3>Gear</h3>
+<h3>Add Gear</h3>
+<form class="create">
+    <input class="clear-input create-id" type="text" name="my_gear[quantity]" value="" placeholder="Quantity">
+    <input class="clear-input" type="text" name="my_gear[name]" value="" placeholder="Name">
+    <input type="submit" name="submit" value="Submit">
+</form>
 
+<h3>Update Gear</h3>
+<form class="update">
+    <input class="clear-input" type="text" name="my_gear[id]" value="" placeholder="ID">
+    <input class="clear-input" type="text" name="my_gear[quantity]" value="" placeholder="Quantity">
+    <input class="clear-input" type="text" name="my_gear[name]" value="" placeholder="Name">
+    <input type="submit" name="submit" value="Submit">
+</form>
+
+<h3>Delete Gear</h3>
+<form class="delete">
+    <input class="clear-input" type="text" name="my_gear[id]" value="" placeholder="ID">
+      <input type="submit" name="submit" value="Submit">
+</form>
+
+<h3>Gear</h3>
 {{#each my_gears as |gear|}}
-{{gear.quantity}}
-{{gear.name}}<br>
+<p>ID: {{gear.id}} | {{gear.quantity}} {{gear.name}}<p>
 {{/each}}

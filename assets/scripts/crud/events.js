@@ -17,7 +17,6 @@ const onCreate = function (event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
-
   api.create(data)
     .then(ui.createSuccess)
     .then(onIndex)
@@ -28,8 +27,8 @@ const onCreate = function (event) {
 const onUpdate = function (event) {
   event.preventDefault()
 
-  const id = $(event.target).data('climb')
   const userInput = getFormFields(event.target)
+  const id = userInput.my_gear.id
 
   api.update(userInput, id)
     .then(ui.updateSuccess(id))
@@ -41,7 +40,8 @@ const onUpdate = function (event) {
 const onDestroy = function (event) {
   event.preventDefault()
 
-  const id = $(event.target).data('id')
+  const id = getFormFields(event.target).my_gear.id
+console.log(id)
 
   api.destroy(id)
     .then(ui.destroySuccess(id))
@@ -49,11 +49,11 @@ const onDestroy = function (event) {
     .catch(ui.destroyFailure)
 }
 
-// user can clck to create, update, or delete a gear.
+// user can click to create, update, or delete a gear.
 const addHandlers = () => {
-  $('.create-climb').on('submit', onCreate)
-  $('.index').on('submit', '.update-climb', onUpdate)
-  $('.index').on('click', '.destroy', onDestroy)
+  $('.gear-table').on('submit', '.create', onCreate)
+  $('.gear-table').on('submit', '.update', onUpdate)
+  $('.gear-table').on('submit', '.delete', onDestroy)
 }
 
 module.exports = {
