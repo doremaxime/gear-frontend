@@ -16,7 +16,7 @@
 <body>
 
 <div class="landing-page-container">
-
+  <h3>Register</h3>
   <form class="sign-up">
       <input class="clear-input" type="email" pattern=".{1,}" required title="1 characters minimum" name="credentials[email]" value="" placeholder="example@example.com">
       <input class="clear-input" type="password" pattern=".{1,}" required title="1 characters minimum" name="credentials[password]" value="" placeholder="password">
@@ -24,6 +24,7 @@
       <input type="submit" name="submit" value="Submit">
   </form>
 
+  <h3>Log In</h3>
   <form class="sign-in">
       <input class="clear-input" type="email" pattern=".{1,}" required title="1 characters minimum" name="credentials[email]" value="" placeholder="example@example.com">
       <input class="clear-input" type="password" pattern=".{1,}" required title="1 characters minimum" name="credentials[password]" value="" placeholder="password">
@@ -36,14 +37,16 @@
 </div>
 
 <div class="home-view">
-
+  <div class="password-sign-out">
+  <h6>Change Password</h6>
   <form class="change-password">
-      <input class="clear-input" type="password" name="passwords[old]" value="" placeholder="Old Password">
-      <input class="clear-input" type="password" name="passwords[new]" value="" placeholder="New Password">
+      <input class="clear-input" type="password" name="passwords[old]" value="" placeholder="Old Password"><br>
+      <input class="clear-input" type="password" name="passwords[new]" value="" placeholder="New Password"><br>
         <input type="submit" name="submit" value="Submit">
   </form>
-
+  <br>
   <button class="sign-out" type="submit">Sign Out</button>
+</div>
 
   <div class="home-view-message">
   </div>
