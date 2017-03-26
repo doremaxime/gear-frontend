@@ -2,8 +2,9 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://ga-wdi-boston.herokuapp.com'
-  }
-}
+    production: 'https://capstone-project-gear.herokuapp.com/',
+    development: 'http://localhost:4741',
+  },
+};
 
 module.exports = config
