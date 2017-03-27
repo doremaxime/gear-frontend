@@ -40,6 +40,8 @@ As a user I want to:
 ![Wireframe](wireframe.JPG "Wireframe")
 ![ERD](ERD.JPG "ERD")
 ![App](app.png "App")
+![App](app2.png "App")
+
 
 ## Technologies used
 
