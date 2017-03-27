@@ -37,7 +37,7 @@ As a user I want to:
 
 ## Visuals
 
-![Wireframe](wireframe.jpg "Wireframe")
+![Wireframe](wireframe.JPG "Wireframe")
 ![ERD](ERD.JPG "ERD")
 ![App](app.png "App")
 
