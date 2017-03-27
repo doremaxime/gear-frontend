@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://capstone-project-gear.herokuapp.com/',
+    production: 'https://capstone-project-gear.herokuapp.com',
     development: 'http://localhost:4741'
   }
 }
