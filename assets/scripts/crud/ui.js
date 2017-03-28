@@ -1,13 +1,17 @@
 'use strict'
 
 const indexMyGearHandlerbars = require('../templates/index-my-gear.handlebars')
+const AddGearHandlerbars = require('../templates/add-gear.handlebars')
 
 const indexSuccess = (data) => {
+  // when user signs in, her resources are automatically indexed.
   const indexMyGearHtml = indexMyGearHandlerbars({
     my_gears: data.my_gears
   })
   $('.gear-table').html(indexMyGearHtml)
-  console.log(data)
+
+  // injects the add-gear-form into the "add gear" nav bar
+  $('.add-gear').html(AddGearHandlerbars)
 }
 
 const createSuccess = (data) => {
