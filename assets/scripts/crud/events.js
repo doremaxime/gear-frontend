@@ -41,7 +41,7 @@ const onDestroy = function (event) {
   event.preventDefault()
 
   const id = getFormFields(event.target).my_gear.id
-console.log(id)
+  // console.log(id)
 
   api.destroy(id)
     .then(ui.destroySuccess(id))
@@ -54,6 +54,14 @@ const addHandlers = () => {
   $('.add-gear').on('submit', '.create', onCreate)
   $('.gear-table').on('submit', '.update', onUpdate)
   $('.gear-table').on('submit', '.delete', onDestroy)
+
+  $('.dropdown-button').dropdown()
+  $('.modal').modal()
+  $('.signup-toggle').click(function () {
+    $(this).hide()
+    $('.signupForm').show(300)
+    $('.policy').css('visibility', 'visible')
+  })
 }
 
 module.exports = {
