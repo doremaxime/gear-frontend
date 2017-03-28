@@ -7,7 +7,7 @@
 
   <!-- Do not add `link` tags unless you know what you are doing -->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <!-- Do not add `script` tags unless you know what you are doing -->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
@@ -18,17 +18,17 @@
 <div class="landing-page-container">
   <h3>Register</h3>
   <form class="sign-up">
-      <input class="clear-input" type="email" pattern=".{1,}" required title="1 characters minimum" name="credentials[email]" value="" placeholder="example@example.com">
-      <input class="clear-input" type="password" pattern=".{1,}" required title="1 characters minimum" name="credentials[password]" value="" placeholder="password">
-      <input class="clear-input" type="password" pattern=".{1,}" required title="1 characters minimum" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
-      <input type="submit" name="submit" value="Submit">
+      <input class="clear-input" type="email" pattern=".{1,}" required title="1 characters minimum" name="credentials[email]" value="" placeholder="example@example.com"><br><br>
+      <input class="clear-input" type="password" pattern=".{1,}" required title="1 characters minimum" name="credentials[password]" value="" placeholder="password"><br><br>
+      <input class="clear-input" type="password" pattern=".{1,}" required title="1 characters minimum" name="credentials[password_confirmation]" value="" placeholder="password confirmation"><br><br>
+      <input class="btn-success" type="submit" name="submit" value="Submit">
   </form>
-
+  <br>
   <h3>Log In</h3>
   <form class="sign-in">
-      <input class="clear-input" type="email" pattern=".{1,}" required title="1 characters minimum" name="credentials[email]" value="" placeholder="example@example.com">
-      <input class="clear-input" type="password" pattern=".{1,}" required title="1 characters minimum" name="credentials[password]" value="" placeholder="password">
-        <input type="submit" name="submit" value="Submit">
+      <input class="clear-input" type="email" pattern=".{1,}" required title="1 characters minimum" name="credentials[email]" value="" placeholder="example@example.com"><br><br>
+      <input class="clear-input" type="password" pattern=".{1,}" required title="1 characters minimum" name="credentials[password]" value="" placeholder="password"><br><br>
+        <input class="btn-success" type="submit" name="submit" value="Submit">
   </form>
 
   <div class="landing-page-message">
@@ -38,14 +38,14 @@
 
 <div class="home-view">
   <div class="password-sign-out">
-  <h6>Change Password</h6>
+  <h5>Change Password</h5>
   <form class="change-password">
-      <input class="clear-input" type="password" name="passwords[old]" value="" placeholder="Old Password"><br>
-      <input class="clear-input" type="password" name="passwords[new]" value="" placeholder="New Password"><br>
-        <input type="submit" name="submit" value="Submit">
+      <input class="clear-input" type="password" name="passwords[old]" value="" placeholder="Old Password"><br><br>
+      <input class="clear-input" type="password" name="passwords[new]" value="" placeholder="New Password"><br><br>
+        <input class="btn-success" type="submit" name="submit" value="Submit">
   </form>
   <br>
-  <button class="sign-out" type="submit">Sign Out</button>
+  <button class="sign-out btn-info" type="submit">Sign Out</button>
 </div>
 
   <div class="home-view-message">

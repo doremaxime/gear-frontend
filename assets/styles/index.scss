@@ -2,10 +2,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 body {
-  background: #E0EAFC; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #E0EAFC , #CFDEF3); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #E0EAFC , #CFDEF3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #4AC29A; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #4AC29A , #BDFFF3); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #4AC29A , #BDFFF3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   text-align: center;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .home-view {
@@ -14,4 +16,19 @@ body {
 
 .password-sign-out {
   text-align: right;
+  font-size: 10px;
+  margin-bottom: -150px;
+  margin-right: 10px;
+}
+
+.clear-input {
+  border-radius: .5em;
+}
+
+@media (max-width: 945px) {
+
+  .password-sign-out {
+    margin-bottom: 0;
+  }
+
 }
