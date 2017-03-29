@@ -2,53 +2,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import url( 'https://fonts.googleapis.com/css?family=Pacifico');
 
-// .input-field label {
-//   color: #999;
-// }
-
-// .input-field input[type=password]:focus + label,
-// .input-field input[type=email]:focus + label {
-//   color: #000;
-// }
-
-// .input-field input[type=password]:focus,
-// .input-field input[type=email]:focus {
-//   border-bottom: 1px solid #000;
-//   box-shadow: 0 1px 0 0 #000;
-// }
-//
-// .input-field input[type=password].valid,
-// .input-field input[type=email].valid {
-//   border-bottom: 1px solid #2196F3;
-//   box-shadow: 0 1px 0 0 #2196F3;
-// }
-//
-// .input-field input[type=password].invalid,
-// .input-field input[type=email].invalid {
-//   border-bottom: 1px solid #F44336;
-//   box-shadow: 0 1px 0 0 #F44336;
-// }
-
-// .input-field .prefix.active {
-//   color: #000;
-// }
-/* Input : switch */
-// .switch {
-//   margin-top: 7px;
-// }
-
-// .switch label .lever {
-//   margin: 0 7px;
-// }
-//
-// .switch label input[type="checkbox"]:checked + .lever {
-//   background-color: #ADD0EB;
-// }
-//
-// .switch label input[type="checkbox"]:checked + .lever::after {
-//   background-color: #4FB0FD;
-// }
-
 .login-body {
   background-image: url("http://icdn8.digitaltrends.com/image/rock_climbing_carabiner_lifestyle-720x720.jpg");
   background-size: cover;
@@ -74,6 +27,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .signupForm {
   display: none;
+  margin-left: 30px;
+  // padding-left: 20px;
+  margin-right: -20px;
 }
 
 .signup {
@@ -94,10 +50,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   border-top: 1px solid #ddd;
 }
 
-// .email label {
-//   margin-left: 11px;
-// }
-
 .policy {
   font-size: 13px;
 }
@@ -105,40 +57,34 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .main-title {
   font-family: pacifico;
 }
-// body {
-//   background: #4AC29A; /* fallback for old browsers */
-//   background: -webkit-linear-gradient(to left, #4AC29A , #BDFFF3); /* Chrome 10-25, Safari 5.1-6 */
-//   background: linear-gradient(to left, #4AC29A , #BDFFF3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-//   text-align: center;
-//   font-size: 20px;
-//   font-family: 'Raleway', sans-serif;
-// }
-//
+
 .home-view {
   display: none;
 }
-//
-// .password-sign-out {
-//   text-align: right;
-//   font-size: 10px;
-// }
-//
-.clear-input {
-  border-radius: .5em;
+
+.gear-table {
+  background: #232526;
+  background: -webkit-linear-gradient(to left, #232526 , #414345);
+  background: linear-gradient(to left, #232526 , #414345);
+  text-align: center;
+  color: white;
+  margin-left: 5%;
+  width: 30%;
+  padding: 5%;
 }
 
 .primary-content,
-  .sidebar {
-    float: none;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 480px;
-  }
+.sidebar {
+  float: none;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 480px;
+}
 
-/* All */
 .nav {
   margin-bottom: 48px;
 }
+
 .nav ul {
   *zoom: 1;
   list-style: none;
@@ -146,42 +92,51 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   padding: 0;
   background: #333;
 }
-.nav ul:before,
-.nav ul:after {
+
+.nav ul:after,
+.nav ul:before {
   content: "";
   display: table;
 }
+
 .nav ul:after {
   clear: both;
 }
+
 .nav ul > li {
   float: left;
   position: relative;
 }
+
 .nav a {
   display: block;
   padding: 10px 20px;
-  line-height: 1.2em;
+  line-height: 1.7em;
   color: #fff;
   border-left: 1px solid #595959;
+  font-size: 1.7rem;
 }
+
 .nav a:hover {
   text-decoration: none;
   background: #595959;
 }
+
 .nav li ul {
   background: #273754;
 }
+
 .nav li ul li {
   width: 200px;
 }
+
 .nav li ul a {
   border: none;
 }
+
 .nav li ul a:hover {
   background: rgba(0, 0, 0, 0.19999999999999996);
 }
-
 
 .nav5 ul > li:hover ul {
   max-height: 1000px;
@@ -201,4 +156,31 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   -moz-transition: 350ms;
   -o-transition: 350ms;
   transition: 350ms;
+}
+
+
+
+.input-field-sign-up {
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-bottom: -30px;
+}
+
+.input-field-sign-up-top {
+  margin-top: 10px;
+}
+
+.input-field-sign-up-bottom {
+  margin-bottom: 0;
+}
+
+.input-field {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.clear-input {
+  border-radius: 0.5em;
+  padding-left: 10%;
+  padding-right: 10%;
 }
