@@ -199,3 +199,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 input {
   text-align: center;
 }
+
+.modal-input {
+  background: #232526;
+  background: -webkit-linear-gradient(to left, #232526 , #414345);
+  background: linear-gradient(to left, #232526 , #414345);
+}
+
+.modal {
+  background-color: rgba(255, 255, 255, 0);
+}

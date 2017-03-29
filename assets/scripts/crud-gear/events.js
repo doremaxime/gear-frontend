@@ -27,7 +27,7 @@ const onUpdateGear = function (event) {
   event.preventDefault()
 
   const userInput = getFormFields(event.target)
-  const id = userInput.my_gear.id
+  const id = $(event.target).data('id')
 
   api.updateGear(userInput, id)
     .then(ui.updateGearSuccess(id))
@@ -51,8 +51,8 @@ const onDestroyGear = function (event) {
 // user can click to create, update, or delete a gear.
 const addHandlers = () => {
   $('.add-gear').on('submit', '.create-gear', onCreateGear)
-  $('.gear-table').on('submit', '.update', onUpdateGear)
-  $('.gear-table').on('submit', '.delete', onDestroyGear)
+  $('.gear-table').on('submit', '.update-gear', onUpdateGear)
+  $('.gear-table').on('submit', '.delete-gear', onDestroyGear)
 }
 
 module.exports = {

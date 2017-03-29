@@ -24,9 +24,11 @@ const createGearFailure = (error) => {
   $('.home-view-message').text('You have not successfully created your gear.')
 }
 
-const updateGearSuccess = (data) => {
+const updateGearSuccess = (data, id) => {
   console.log(data)
   $('.home-view-message').text('You have successfully updated your gear.')
+  $('.updateGearModal' + id).modal('toggle')
+  $('.modal-backdrop').remove()
 }
 
 const updateGearFailure = (error) => {
