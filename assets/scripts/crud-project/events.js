@@ -28,7 +28,7 @@ const onUpdateProject = function (event) {
 
   const userInput = getFormFields(event.target)
   const id = userInput.project.id
-  console.log(id)
+
   api.updateProject(userInput, id)
     .then(ui.updateProjectSuccess(id))
     .then(onIndexProject)
@@ -40,8 +40,6 @@ const onDestroyProject = function (event) {
   event.preventDefault()
 
   const id = getFormFields(event.target).project.id
-  console.log(id)
-
   api.destroyProject(id)
     .then(ui.destroyProjectSuccess(id))
     .then(onIndexProject)
