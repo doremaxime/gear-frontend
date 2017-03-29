@@ -53,21 +53,11 @@ const addHandlers = () => {
   $('.add-gear').on('submit', '.create-gear', onCreateGear)
   $('.gear-table').on('submit', '.update', onUpdateGear)
   $('.gear-table').on('submit', '.delete', onDestroyGear)
-  // $('.add-project').on('submit', '.create-project', onCreateProject)
-
-  $('.dropdown-button').dropdown()
-  $('.modal').modal()
-  $('.signup-toggle').click(function () {
-    $(this).hide()
-    $('.signupForm').show(300)
-    $('.policy').css('visibility', 'visible')
-  })
 }
 
 module.exports = {
   onIndexGear,
   onCreateGear,
-  // onCreateProject,
   onUpdateGear,
   onDestroyGear,
   addHandlers

@@ -61,6 +61,14 @@ const addHandlers = () => {
   $('.sign-in').on('submit', onSignIn)
   $('.change-password').on('submit', onChangePassword)
   $('.sign-out').on('click', onSignOut)
+
+  $('.dropdown-button').dropdown()
+  $('.modal').modal()
+  $('.signup-toggle').click(function () {
+    $(this).hide()
+    $('.signupForm').show(300)
+    $('.policy').css('visibility', 'visible')
+  })
 }
 
 module.exports = {

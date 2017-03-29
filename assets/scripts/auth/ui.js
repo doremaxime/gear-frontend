@@ -1,6 +1,7 @@
 'use strict'
 
-const events = require('../crud-gear/events.js')
+const gearEvents = require('../crud-gear/events.js')
+const projectEvents = require('../crud-project/events.js')
 
 const signUpSuccess = () => {
   $('.landing-page-message').text('success, please sign in.')
@@ -17,7 +18,8 @@ const signInSuccess = () => {
   $('.landing-page-container').css('display', 'none')
   $('.home-view').css('display', 'unset')
   $('.clear-input').val('')
-  events.onIndexGear()
+  gearEvents.onIndexGear()
+  projectEvents.onIndexProject()
 }
 
 const signInFailure = () => {

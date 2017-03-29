@@ -3,12 +3,14 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const authEvents = require('./auth/events.js')
-const crudEvents = require('./crud/events.js')
+const crudGearEvents = require('./crud-gear/events.js')
+const crudProjectEvents = require('./crud-project/events.js')
 
 $(() => {
   setAPIOrigin(location, config)
   authEvents.addHandlers()
-  crudEvents.addHandlers()
+  crudGearEvents.addHandlers()
+  crudProjectEvents.addHandlers()
 })
 
 // use require with a reference to bundle the file and use it in this file
