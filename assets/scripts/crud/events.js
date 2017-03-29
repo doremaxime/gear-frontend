@@ -51,7 +51,7 @@ const onDestroy = function (event) {
 
 // user can click to create, update, or delete a gear.
 const addHandlers = () => {
-  $('.add-gear').on('submit', '.create', onCreate)
+  $('.add-gear').on('submit', '.create-gear', onCreate)
   $('.gear-table').on('submit', '.update', onUpdate)
   $('.gear-table').on('submit', '.delete', onDestroy)
 

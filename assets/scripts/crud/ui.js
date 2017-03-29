@@ -2,6 +2,7 @@
 
 const indexMyGearHandlerbars = require('../templates/index-my-gear.handlebars')
 const AddGearHandlerbars = require('../templates/add-gear.handlebars')
+const AddProjectHandlerbars = require('../templates/add-project.handlebars')
 
 const indexSuccess = (data) => {
   // when user signs in, her resources are automatically indexed.
@@ -12,6 +13,8 @@ const indexSuccess = (data) => {
 
   // injects the add-gear-form into the "add gear" nav bar
   $('.add-gear').html(AddGearHandlerbars)
+  // injects the add-project-form into the "add project" nav bar
+  $('.add-project').html(AddProjectHandlerbars)
 }
 
 const createSuccess = (data) => {
