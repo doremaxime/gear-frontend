@@ -24,9 +24,11 @@ const createProjectFailure = (error) => {
   $('.home-view-message').text('You have not successfully created your project.')
 }
 
-const updateProjectSuccess = (data) => {
+const updateProjectSuccess = (data, id) => {
   console.log(data)
   $('.home-view-message').text('You have successfully updated your project.')
+  $('.updateProjectModal' + id).modal('toggle')
+  $('.modal-backdrop').remove()
 }
 
 const updateProjectFailure = (error) => {
@@ -34,9 +36,11 @@ const updateProjectFailure = (error) => {
   $('.home-view-message').text('You have not successfully updated your project.')
 }
 
-const destroyProjectSuccess = (data) => {
+const destroyProjectSuccess = (data, id) => {
   console.log(data)
   $('.home-view-message').text('You have successfully deleted your project.')
+  $('.destroyProjectModal' + id).modal('toggle')
+  $('.modal-backdrop').remove()
 }
 
 const destroyProjectFailure = (error) => {

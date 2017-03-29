@@ -1,19 +1,45 @@
-<h3>Update Projects</h3>
-<form class="update-project">
-    <input class="clear-input" type="text" pattern=".{1,}" required title="1 characters minimum" name="project[id]" value="" placeholder="ID">
-    <input class="clear-input" type="text" pattern=".{1,}" required title="1 characters minimum" name="project[comment]" value="" placeholder="Comment">
-    <input type="submit" name="submit" value="Submit">
-</form>
-
-<h3>Delete Projects</h3>
-<form class="delete-project">
-    <input class="clear-input" type="text" pattern=".{1,}" required title="1 characters minimum" name="project[id]" value="" placeholder="ID">
-      <input type="submit" name="submit" value="Submit">
-</form>
-
-<br>
-
 <h2>Projects</h2>
 {{#each projects as |project|}}
-<p>ID: {{project.id}} | {{project.comment}}<p>
+  <tr>{{project.comment}}</tr>
+  <tr data-id="{{project.id}}">
+    <td><button data-id="{{project.id}}" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#updateProjectModal{{project.id}}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+      <div id="updateProjectModal{{project.id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="createProjectModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="createProjectModalLabel">Update Project</h4>
+            </div>
+            <form class="update-project" data-id="{{project.id}}">
+              <fieldset>
+                <input class="clear-input modal-input" type="text" pattern=".{1,}" required title="1 characters minimum" name="project[comment]" value="" placeholder="comment">
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <input data-id="{{project.id}}" type="submit" class="btn update-project btn-primary" name="submit" value="Submit">
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </td>
+    <td><button data-id="{{project.id}}" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#destroyProjectModal{{project.id}}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+      <div id="destroyProjectModal{{project.id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="destroyProjectModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="destroyProjectModalLabel">Are you sure?</h4>
+            </div>
+            <div>
+              <input data-id="{{project.id}}" type="submit" class="btn destroy-project btn-primary" name="submit" value="Do it!">
+            </div>
+          </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+  <br>
+  <br>
+
 {{/each}}

@@ -27,7 +27,7 @@ const onUpdateProject = function (event) {
   event.preventDefault()
 
   const userInput = getFormFields(event.target)
-  const id = userInput.project.id
+  const id = $(event.target).data('id')
 
   api.updateProject(userInput, id)
     .then(ui.updateProjectSuccess(id))
@@ -40,7 +40,8 @@ const onDestroyProject = function (event) {
   event.preventDefault()
 
   const id = $(event.target).data('id')
-console.log('id is ', id);
+  console.log('id is ', id)
+
   api.destroyProject(id)
     .then(ui.destroyProjectSuccess(id))
     .then(onIndexProject)
@@ -51,7 +52,7 @@ console.log('id is ', id);
 const addHandlers = () => {
   $('.add-project').on('submit', '.create-project', onCreateProject)
   $('.project-table').on('submit', '.update-project', onUpdateProject)
-  $('.project-table').on('click', '.delete-project', onDestroyProject)
+  $('.project-table').on('click', '.destroy-project', onDestroyProject)
 }
 
 module.exports = {
