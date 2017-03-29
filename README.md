@@ -1,9 +1,8 @@
 ## about
 
-This is a SPA that lets user keep a record of all their gear.
+This is a SPA that lets user keep a record of all their gear and projects.
 
 I took multiple approaches for this project.
-
 This is because I had to balance all the tools at my disposal and the fact that
 I only had less that a week to meet all the requirements.
 
@@ -34,6 +33,10 @@ As a user I want to:
 - Add gear
 - Update my gear
 - Delete my gear
+- view all my projects
+- Add projects
+- Update my projects
+- Delete my projects
 
 ## Visuals
 
