@@ -36,9 +36,11 @@ const updateGearFailure = (error) => {
   $('.home-view-message').text('You have not successfully updated your gear.')
 }
 
-const destroyGearSuccess = (data) => {
+const destroyGearSuccess = (data, id) => {
   console.log(data)
   $('.home-view-message').text('You have successfully deleted your gear.')
+  $('.destroyGearModal' + id).modal('toggle')
+  $('.modal-backdrop').remove()
 }
 
 const destroyGearFailure = (error) => {

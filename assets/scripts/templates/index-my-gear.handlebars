@@ -25,6 +25,21 @@
         </div>
       </div>
     </td>
+    <td><button data-id="{{gear.id}}" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#destroyGearModal{{gear.id}}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+      <div id="destroyGearModal{{gear.id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="destroyGearModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="destroyGearModalLabel">Are you sure?</h4>
+            </div>
+            <div>
+              <input data-id="{{gear.id}}" type="submit" class="btn destroy-gear btn-primary" name="submit" value="Do it!">
+            </div>
+          </div>
+        </div>
+      </div>
+    </td>
   </tr>
   <br>
   <br>
