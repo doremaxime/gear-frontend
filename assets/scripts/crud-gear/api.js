@@ -3,7 +3,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const index = function () {
+const indexGear = function () {
   return $.ajax({
     url: config.apiOrigin + '/my_gears',
     method: 'GET',
@@ -13,7 +13,7 @@ const index = function () {
   })
 }
 
-const show = function (id) {
+const showGear = function (id) {
   return $.ajax({
     url: config.apiOrigin + '/my_gears/' + id,
     method: 'GET',
@@ -23,7 +23,7 @@ const show = function (id) {
   })
 }
 
-const create = function (data) {
+const createGear = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/my_gears',
     method: 'POST',
@@ -34,7 +34,7 @@ const create = function (data) {
   })
 }
 
-const update = function (data, id) {
+const updateGear = function (data, id) {
   return $.ajax({
     url: config.apiOrigin + '/my_gears/' + id,
     method: 'PATCH',
@@ -45,7 +45,7 @@ const update = function (data, id) {
   })
 }
 
-const destroy = function (id) {
+const destroyGear = function (id) {
   return $.ajax({
     url: config.apiOrigin + '/my_gears/' + id,
     method: 'DELETE',
@@ -56,9 +56,9 @@ const destroy = function (id) {
 }
 
 module.exports = {
-  index,
-  show,
-  create,
-  update,
-  destroy
+  indexGear,
+  showGear,
+  createGear,
+  updateGear,
+  destroyGear
 }
