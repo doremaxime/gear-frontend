@@ -10,11 +10,24 @@ const onSignUp = function (event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
-
+  const signInData = {
+    credentials: {
+      email: data.credentials.email,
+      password: data.credentials.password
+    }
+  }
   api.signUp(data)
-  .then(ui.signUpSuccess)
-  // .then(onSignIn())
-  .catch(ui.signUpFailure)
+  .then(() => {
+    api.signIn(signInData)
+      .then((response) => {
+        store.user = response.user
+        return store.user
+      })
+      .then(ui.signInSuccess)
+      .catch(ui.signUpFailure)
+  })
+    .then(ui.success)
+    .catch(ui.signUpFailure)
 }
 
 // User can sign in
