@@ -1,47 +1,46 @@
-<h2>My Gear</h2>
-{{#each my_gears as |gear|}}
-  <tr>{{gear.quantity}}</tr>
-  <tr>{{gear.name}}</tr>
-  <tr data-id="{{gear.id}}">
-    <td><button data-id="{{gear.id}}" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#updateGearModal{{gear.id}}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-      <div id="updateGearModal{{gear.id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="createGearModalLabel">
-        <div class="modal-dialog modal-sm" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="createGearModalLabel">Update Gear</h4>
-            </div>
-            <form class="update-gear" data-id="{{gear.id}}">
-              <fieldset>
-                <input class="clear-input modal-input" type="text" pattern=".{1,}" required title="1 characters minimum" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="my_gear[quantity]" value="" placeholder="Quantity">
-                <input class="clear-input modal-input" type="text" pattern=".{1,}" required title="1 characters minimum" name="my_gear[name]" value="" placeholder="Name">
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <input data-id="{{gear.id}}" type="submit" class="btn update-gear btn-primary" name="submit" value="Submit">
-                </div>
-              </fieldset>
-            </form>
-          </div>
-        </div>
-      </div>
-    </td>
-    <td><button data-id="{{gear.id}}" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#destroyGearModal{{gear.id}}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-      <div id="destroyGearModal{{gear.id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="destroyGearModalLabel">
-        <div class="modal-dialog modal-sm" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="destroyGearModalLabel">Are you sure?</h4>
-            </div>
-            <div>
-              <input data-id="{{gear.id}}" type="submit" class="btn destroy-gear btn-primary" name="submit" value="Do it!">
+  <h2>My Gear</h2>
+  {{#each my_gears as |gear|}}
+    <tr>{{gear.quantity}}</tr>
+    <tr>{{gear.name}}</tr>
+    <tr data-id="{{gear.id}}">
+      <td><button data-id="{{gear.id}}" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#updateGearModal{{gear.id}}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+        <div id="updateGearModal{{gear.id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="createGearModalLabel">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="createGearModalLabel">Update Gear</h4>
+              </div>
+              <form class="update-gear" data-id="{{gear.id}}">
+                <fieldset>
+                  <input class="clear-input modal-input" type="text" pattern=".{1,}" required title="1 characters minimum" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="my_gear[quantity]" value="" placeholder="Quantity">
+                  <input class="clear-input modal-input" type="text" pattern=".{1,}" required title="1 characters minimum" name="my_gear[name]" value="" placeholder="Name">
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <input data-id="{{gear.id}}" type="submit" class="btn update-gear btn-primary" name="submit" value="Submit">
+                  </div>
+                </fieldset>
+              </form>
             </div>
           </div>
         </div>
-      </div>
-    </td>
-  </tr>
-  <br>
-  <br>
-
-{{/each}}
+      </td>
+      <td><button data-id="{{gear.id}}" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#destroyGearModal{{gear.id}}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+        <div id="destroyGearModal{{gear.id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="destroyGearModalLabel">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="destroyGearModalLabel">Are you sure?</h4>
+              </div>
+              <div>
+                <input data-id="{{gear.id}}" type="submit" class="btn destroy-gear btn-primary" name="submit" value="Do it!">
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <br>
+    <br>
+  {{/each}}
