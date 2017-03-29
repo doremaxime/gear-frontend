@@ -1,0 +1,19 @@
+<h3>Update Projects</h3>
+<form class="update-project">
+    <input class="clear-input" type="text" pattern=".{1,}" required title="1 characters minimum" name="project[id]" value="" placeholder="ID">
+    <input class="clear-input" type="text" pattern=".{1,}" required title="1 characters minimum" name="project[comment]" value="" placeholder="Comment">
+    <input type="submit" name="submit" value="Submit">
+</form>
+
+<h3>Delete Projects</h3>
+<form class="delete-project">
+    <input class="clear-input" type="text" pattern=".{1,}" required title="1 characters minimum" name="project[id]" value="" placeholder="ID">
+      <input type="submit" name="submit" value="Submit">
+</form>
+
+<br>
+
+<h2>Projects</h2>
+{{#each projects as |project|}}
+<p>ID: {{project.id}} | {{project.comment}}<p>
+{{/each}}

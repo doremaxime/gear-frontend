@@ -73,6 +73,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   padding: 5%;
 }
 
+.project-table {
+  background: #232526;
+  background: -webkit-linear-gradient(to left, #232526 , #414345);
+  background: linear-gradient(to left, #232526 , #414345);
+  text-align: center;
+  color: white;
+  margin-left: 5%;
+  width: 30%;
+  padding: 5%;
+}
+
 .primary-content,
 .sidebar {
   float: none;

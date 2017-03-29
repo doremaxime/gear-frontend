@@ -27,8 +27,8 @@ const onUpdateProject = function (event) {
   event.preventDefault()
 
   const userInput = getFormFields(event.target)
-  const id = userInput.my_project.id
-
+  const id = userInput.project.id
+  console.log(id)
   api.updateProject(userInput, id)
     .then(ui.updateProjectSuccess(id))
     .then(onIndexProject)
@@ -39,8 +39,8 @@ const onUpdateProject = function (event) {
 const onDestroyProject = function (event) {
   event.preventDefault()
 
-  const id = getFormFields(event.target).my_project.id
-  // console.log(id)
+  const id = getFormFields(event.target).project.id
+  console.log(id)
 
   api.destroyProject(id)
     .then(ui.destroyProjectSuccess(id))
@@ -51,8 +51,8 @@ const onDestroyProject = function (event) {
 // user can click to create, update, or delete a project.
 const addHandlers = () => {
   $('.add-project').on('submit', '.create-project', onCreateProject)
-  // $('.project-table').on('submit', '.update', onUpdateProject)
-  // $('.project-table').on('submit', '.delete', onDestroyProject)
+  $('.project-table').on('submit', '.update-project', onUpdateProject)
+  $('.project-table').on('submit', '.delete-project', onDestroyProject)
 }
 
 module.exports = {

@@ -1,8 +1,15 @@
 'use strict'
 
+const indexProjectsHandlerbars = require('../templates/index-projects.handlebars')
 const AddProjectHandlerbars = require('../templates/add-project.handlebars')
 
-const indexProjectSuccess = () => {
+const indexProjectSuccess = (data) => {
+  // when user signs in, her resources are automatically indexed.
+  const indexProjectsHtml = indexProjectsHandlerbars({
+    projects: data.projects
+  })
+  $('.project-table').html(indexProjectsHtml)
+
   // injects the add-project-form into the "add project" nav bar
   $('.add-project').html(AddProjectHandlerbars)
 }
