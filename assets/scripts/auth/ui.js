@@ -15,18 +15,15 @@ function shakeForm () {
 }
 
 const signUpSuccess = () => {
-  $('.landing-page-message').text('success, please sign in.')
   $('.clear-input').val('')
 }
 
 const signUpFailure = () => {
-  $('.landing-page-message').text('error, please try again.')
   $('.clear-input').val('')
   shakeForm()
 }
 
 const signInSuccess = () => {
-  $('.landing-page-message').text('')
   $('.landing-page-container').css('display', 'none')
   $('.home-view').css('display', 'unset')
   $('.clear-input').val('')
@@ -35,7 +32,6 @@ const signInSuccess = () => {
 }
 
 const signInFailure = () => {
-  $('.landing-page-message').text('error, please try again.')
   $('.clear-input').val('')
   shakeForm()
 }
