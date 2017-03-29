@@ -2,6 +2,7 @@
 
 const indexProjectsHandlerbars = require('../templates/index-projects.handlebars')
 const AddProjectHandlerbars = require('../templates/add-project.handlebars')
+const shakeFromAuthUi = require('../auth/ui')
 
 const indexProjectSuccess = (data) => {
   // when user signs in, her resources are automatically indexed.
@@ -34,6 +35,7 @@ const updateProjectSuccess = (data, id) => {
 const updateProjectFailure = (error) => {
   console.log(error)
   $('.home-view-message').text('You have not successfully updated your project.')
+  shakeFromAuthUi.shakeForm()
 }
 
 const destroyProjectSuccess = (data, id) => {
@@ -46,6 +48,7 @@ const destroyProjectSuccess = (data, id) => {
 const destroyProjectFailure = (error) => {
   console.log(error)
   $('.home-view-message').text('You have not successfully deleted your project.')
+  shakeFromAuthUi.shakeForm()
 }
 
 module.exports = {

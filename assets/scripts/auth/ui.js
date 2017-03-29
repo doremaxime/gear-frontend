@@ -3,6 +3,17 @@
 const gearEvents = require('../crud-gear/events.js')
 const projectEvents = require('../crud-project/events.js')
 
+// this function will make the div shake left to right quickly when called
+function shakeForm () {
+  let l = 20
+  for (let i = 0; i < 10; i++)
+    $('.row').animate({
+      'margin-left': '+=' + (l = -l) + 'px',
+      'margin-right': '-=' + l + 'px'
+    }, 50)
+
+}
+
 const signUpSuccess = () => {
   $('.landing-page-message').text('success, please sign in.')
   $('.clear-input').val('')
@@ -11,6 +22,7 @@ const signUpSuccess = () => {
 const signUpFailure = () => {
   $('.landing-page-message').text('error, please try again.')
   $('.clear-input').val('')
+  shakeForm()
 }
 
 const signInSuccess = () => {
@@ -25,6 +37,7 @@ const signInSuccess = () => {
 const signInFailure = () => {
   $('.landing-page-message').text('error, please try again.')
   $('.clear-input').val('')
+  shakeForm()
 }
 
 const changePasswordSuccess = () => {
@@ -35,6 +48,7 @@ const changePasswordSuccess = () => {
 const changePasswordFailure = () => {
   $('.home-view-message').text('error, please try again.')
   $('.clear-input').val('')
+  shakeForm()
 }
 
 const signOutSuccess = () => {

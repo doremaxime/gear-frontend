@@ -2,6 +2,7 @@
 
 const indexMyGearHandlerbars = require('../templates/index-my-gear.handlebars')
 const AddGearHandlerbars = require('../templates/add-gear.handlebars')
+const shakeFromAuthUi = require('../auth/ui')
 
 const indexGearSuccess = (data) => {
   // when user signs in, her resources are automatically indexed.
@@ -34,6 +35,7 @@ const updateGearSuccess = (data, id) => {
 const updateGearFailure = (error) => {
   console.log(error)
   $('.home-view-message').text('You have not successfully updated your gear.')
+  shakeFromAuthUi.shakeForm()
 }
 
 const destroyGearSuccess = (data, id) => {
@@ -46,6 +48,7 @@ const destroyGearSuccess = (data, id) => {
 const destroyGearFailure = (error) => {
   console.log(error)
   $('.home-view-message').text('You have not successfully deleted your gear.')
+  shakeFromAuthUi.shakeForm()
 }
 
 module.exports = {
