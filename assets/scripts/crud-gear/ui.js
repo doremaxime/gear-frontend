@@ -18,6 +18,7 @@ const indexGearSuccess = (data) => {
 const createGearSuccess = (data) => {
   console.log(data)
   $('.home-view-message').text('You have successfully added your gear.')
+  // $.notify('Title', 'Your message here', 'success', 5000)
 }
 
 const createGearFailure = (error) => {

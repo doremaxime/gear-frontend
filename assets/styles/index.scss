@@ -63,21 +63,26 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   font-family: 'Muli', sans-serif;
 }
 
+.home-view-message {
+  background: #ee6e73;
+}
+
 .gear-table,
 .project-table {
+  float: left;
   background: #232526;
   background: -webkit-linear-gradient(to left, #232526 , #414345);
   background: linear-gradient(to left, #232526 , #414345);
+  opacity: 0.8;
   text-align: center;
   color: white;
-  margin-left: 5%;
-  width: 30%;
-  padding: 5%;
+  margin-left: 2.5%;
+  width: 25%;
+  padding: 2px;
   font-family: 'Muli', sans-serif;
   font-size: 20px;
+  overflow: auto;
 }
-// .project-table {
-// }
 
 .primary-content,
 .sidebar {
@@ -89,6 +94,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .nav {
   margin-bottom: 48px;
+  // opacity: 0.95;
 }
 
 .nav ul {
@@ -106,7 +112,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .nav ul:after {
-  clear: both;
+  // clear: both;
 }
 
 .nav ul > li {
@@ -130,6 +136,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .nav li ul {
   background: #273754;
+  opacity: none;
 }
 
 .nav li ul li {
@@ -152,10 +159,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .nav5 li ul {
   position: absolute;
   left: 0;
-  top: 36px;
+  top: 65px;
   z-index: 1;
   max-height: 0;
-  overflow: hidden;
+  // overflow: hidden;
   -webkit-transform: perspective(400) rotate3d(1, 0, 0, -90deg);
   -webkit-transform-origin: 50% 0;
   -webkit-transition: 350ms;
@@ -201,6 +208,10 @@ input {
 
 .modal {
   background-color: rgba(255, 255, 255, 0);
+}
+
+.modal-title {
+  color: #232526;
 }
 
 tbody,
