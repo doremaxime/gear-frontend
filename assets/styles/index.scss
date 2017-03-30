@@ -81,17 +81,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   overflow: auto;
 }
 
-[draggable=true] {
-    cursor: auto;
-}
-
-.resizable {
-    overflow: scroll;
-    resize: both;
-    max-width: 600px;
-    max-height: 600px;
-}
-
 .primary-content,
 .sidebar {
   float: none;

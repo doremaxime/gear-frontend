@@ -3,24 +3,14 @@
 const gearEvents = require('../crud-gear/events.js')
 const projectEvents = require('../crud-project/events.js')
 
-// this function will make the div shake left to right quickly when called
-function shakeForm () {
-  let l = 20
-  for (let i = 0; i < 10; i++)
-    $('.row').animate({
-      'margin-left': '+=' + (l = -l) + 'px',
-      'margin-right': '-=' + l + 'px'
-    }, 50)
-
-}
-
 const signUpSuccess = () => {
   $('.clear-input').val('')
 }
 
 const signUpFailure = () => {
   $('.clear-input').val('')
-  shakeForm()
+  $.notify("Email taken or passwords don't match", 'error')
+  // shakeForm()
 }
 
 const signInSuccess = () => {
@@ -33,24 +23,28 @@ const signInSuccess = () => {
 
 const signInFailure = () => {
   $('.clear-input').val('')
-  shakeForm()
+  // shakeForm()
+  $.notify('Invalid email or password', 'error')
 }
 
 const changePasswordSuccess = () => {
-  $('.home-view-message').text('You have successfully changed password.')
+  // $('.home-view-message').text('You have successfully changed password.')
+  $.notify('Password changed', 'success')
   $('.clear-input').val('')
 }
 
 const changePasswordFailure = () => {
-  $('.home-view-message').text('error, please try again.')
+  // $('.home-view-message').text('error, please try again.')
+  $.notify('Old password is not correct', 'error')
   $('.clear-input').val('')
-  shakeForm()
+  // shakeForm()
 }
 
 const signOutSuccess = () => {
   $('.home-view-message').text('')
   $('.landing-page-container').css('display', 'unset')
   $('.home-view').css('display', 'none')
+  $.notify('Come again soon!', 'success')
 }
 
 module.exports = {
