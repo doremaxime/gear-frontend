@@ -3,13 +3,26 @@
 const indexProjectsHandlerbars = require('../templates/index-projects.handlebars')
 const AddProjectHandlerbars = require('../templates/add-project.handlebars')
 // const shakeFromAuthUi = require('../auth/ui')
+// const countObj = require('../crud-gear/ui.js')
+
+function countObj (obj) {
+  let i = 0
+  for (const key in obj) {
+    ++i
+  }
+  return i
+}
 
 const indexProjectSuccess = (data) => {
   // when user signs in, her resources are automatically indexed.
   const indexProjectsHtml = indexProjectsHandlerbars({
     projects: data.projects
   })
-  $('.project-table').html(indexProjectsHtml)
+  // if (countObj(data) !== 0) {
+    $('.project-table').html(indexProjectsHtml)
+  // } else {
+  //   $.notify('Add your project!', 'success')
+  // }
 
   // injects the add-project-form into the "add project" nav bar
   $('.add-project').html(AddProjectHandlerbars)

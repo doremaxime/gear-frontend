@@ -3,23 +3,30 @@
 const indexMyGearHandlerbars = require('../templates/index-my-gear.handlebars')
 const AddGearHandlerbars = require('../templates/add-gear.handlebars')
 
-// this function will make the div shake left to right quickly when called
-function shakeForm () {
-  let l = 20
-  for (let i = 0; i < 10; i++)
-    $('.row').animate({
-      'margin-left': '+=' + (l = -l) + 'px',
-      'margin-right': '-=' + l + 'px'
-    }, 50)
+// function countObj (obj) {
+//   let i = 0
+//   for (const key in obj) {
+//     ++i
+//   }
+//   return i
+// }
 
-}
+// this function will make the div shake left to right quickly when called
+// function shakeForm () {
+//   let l = 20
+//   for (let i = 0; i < 10; i++)
+//     $('.row').animate({
+//       'margin-left': '+=' + (l = -l) + 'px',
+//       'margin-right': '-=' + l + 'px'
+//     }, 50)
+// }
 
 const indexGearSuccess = (data) => {
   // when user signs in, her resources are automatically indexed.
   const indexMyGearHtml = indexMyGearHandlerbars({
     my_gears: data.my_gears
   })
-  $('.gear-table').html(indexMyGearHtml)
+    $('.gear-table').html(indexMyGearHtml)
 
   // injects the add-gear-form into the "add gear" nav bar
   $('.add-gear').html(AddGearHandlerbars)

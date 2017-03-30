@@ -2,6 +2,7 @@
 
 const gearEvents = require('../crud-gear/events.js')
 const projectEvents = require('../crud-project/events.js')
+const empty = require('../templates/empty.handlebars')
 
 const signUpSuccess = () => {
   $('.clear-input').val('')
@@ -14,11 +15,11 @@ const signUpFailure = () => {
 }
 
 const signInSuccess = () => {
+  gearEvents.onIndexGear()
+  projectEvents.onIndexProject()
   $('.landing-page-container').css('display', 'none')
   $('.home-view').css('display', 'unset')
   $('.clear-input').val('')
-  gearEvents.onIndexGear()
-  projectEvents.onIndexProject()
 }
 
 const signInFailure = () => {
@@ -45,6 +46,9 @@ const signOutSuccess = () => {
   $('.landing-page-container').css('display', 'unset')
   $('.home-view').css('display', 'none')
   $.notify('Come again soon!', 'success')
+
+  $('.project-table').html(empty)
+  $('.gear-table').html(empty)
 }
 
 module.exports = {

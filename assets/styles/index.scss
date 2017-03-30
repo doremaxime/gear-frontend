@@ -2,7 +2,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import url( 'https://fonts.googleapis.com/css?family=Pacifico');
 
-.login-body {
+body {
   background-image: url("https://raw.githubusercontent.com/doremaxime/gear-frontend/master/assets/styles/images/gear-pic.jpg");
   background-size: cover;
   background-position: center;
@@ -64,23 +64,33 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   font-family: 'Muli', sans-serif;
 }
 
-.home-view-message {
-  background: #ee6e73;
-}
+// .home-view-message {
+//   background: #ee6e73;
+// }
 
 .gear-table,
 .project-table {
   float: left;
+  display: inline-block;
   background: rgba(25, 29, 33, 0.9);
   text-align: center;
   color: white;
   margin-left: 2.5%;
-  width: 28%;
+  // width: 28%;
   padding: 2px;
   font-family: 'Muli', sans-serif;
   font-size: 20px;
   overflow: auto;
 }
+
+.gear-table:empty {
+  display: none
+}
+
+.project-table:empty
+{ display: none
+}
+
 
 .primary-content,
 .sidebar {

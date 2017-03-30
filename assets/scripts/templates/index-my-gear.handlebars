@@ -1,3 +1,4 @@
+{{#if my_gears}}
 <h2>Gear</h2>
 
 <table class="table">
@@ -22,8 +23,8 @@
                 <h4 class="modal-title" id="createGearModalLabel">Update Gear</h4>
                 <br>
                 <form class="update-gear" data-id="{{gear.id}}">
-                  <input class="clear-input modal-input" type="text" required onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="my_gear[quantity]" data-char-limit="20" maxlength="20" value="" placeholder="Quantity">
-                  <input class="clear-input modal-input" type="text" required name="my_gear[name]" data-char-limit="20" maxlength="20" value="" placeholder="Name">
+                  <input class="clear-input modal-input" type="text" required onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="my_gear[quantity]" data-char-limit="4" maxlength="4" value="" placeholder="Quantity">
+                  <input class="clear-input modal-input" type="text" required name="my_gear[name]" data-char-limit="12" maxlength="12" value="" placeholder="Name">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                   <input data-id="{{gear.id}}" type="submit" class="btn update-gear btn-primary" name="submit" value="Submit">
                 </form>
@@ -47,3 +48,4 @@
       </tr>
     {{/each}}
   </tbody>
+  {{/if}}
