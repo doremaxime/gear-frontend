@@ -20,8 +20,8 @@
                 <h4 class="modal-title" id="createGearModalLabel">Update Gear</h4>
                 <br>
               <form class="update-gear" data-id="{{gear.id}}">
-                  <input class="clear-input modal-input" type="text" pattern=".{1,}" required title="1 characters minimum" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="my_gear[quantity]" value="" placeholder="Quantity">
-                  <input class="clear-input modal-input" type="text" pattern=".{1,}" required title="1 characters minimum" name="my_gear[name]" value="" placeholder="Name">
+                  <input class="clear-input modal-input" type="text" required onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="my_gear[quantity]" value="" placeholder="Quantity">
+                  <input class="clear-input modal-input" type="text" required name="my_gear[name]" value="" placeholder="Name">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <input data-id="{{gear.id}}" type="submit" class="btn update-gear btn-primary" name="submit" value="Submit">
               </form>

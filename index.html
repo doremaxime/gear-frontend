@@ -25,12 +25,12 @@
           <form class="sign-in">
             <div class="row">
               <div class="input-field">
-                <input class="clear-input validate" id="user" type="email" pattern=".{1,}" required title="1 characters minimum" name="credentials[email]" value="" placeholder="example@example.com">
+                <input class="clear-input validate" id="user" type="email" required name="credentials[email]" value="" placeholder="example@example.com">
               </div>
             </div>
             <div class="row">
               <div class="input-field">
-                <input class="clear-input validate" id="pass" type="password" pattern=".{1,}" required title="1 characters minimum" name="credentials[password]" value="" placeholder="password">
+                <input class="clear-input validate" id="pass" type="password" required name="credentials[password]" value="" placeholder="password">
               </div>
             </div>
             <div class="row">
@@ -48,17 +48,17 @@
             <form class="sign-up">
               <div class="row">
                 <div class="input-field-sign-up input-field-sign-up-top col s12">
-                  <input class="clear-input validate" type="email" pattern=".{1,}" required title="1 characters minimum" name="credentials[email]" value="" placeholder="example@example.com">
+                  <input class="clear-input validate" type="email" required name="credentials[email]" value="" placeholder="example@example.com">
                 </div>
               </div>
               <div class="row">
                 <div class="input-field-sign-up col s12">
-                  <input class="clear-input validate" type="password" pattern=".{1,}" required title="1 characters minimum" name="credentials[password]" value="" placeholder="password">
+                  <input class="clear-input validate" type="password" required name="credentials[password]" value="" placeholder="password">
                 </div>
               </div>
               <div class="row">
                 <div class="input-field-sign-up input-field-sign-up-bottom col s12">
-                  <input class="clear-input" type="password" pattern=".{1,}" required title="1 characters minimum" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
+                  <input class="clear-input" type="password" required name="credentials[password_confirmation]" value="" placeholder="password confirmation">
                 </div>
               </div>
               <div class="row">
@@ -101,8 +101,8 @@
           <a href="#">Change Password</a>
           <ul>
             <form class="change-password">
-              <input class="clear-input" type="password" name="passwords[old]" value="" placeholder="Old Password"><br>
-              <input class="clear-input" type="password" name="passwords[new]" value="" placeholder="New Password">
+              <input class="clear-input" type="password" required name="passwords[old]" value="" placeholder="Old Password"><br>
+              <input class="clear-input" type="password" required name="passwords[new]" value="" placeholder="New Password">
               <input class="btn btn-success" type="submit" name="submit" value="Submit">
             </form>
           </ul>
