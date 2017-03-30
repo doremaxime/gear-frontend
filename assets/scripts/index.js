@@ -12,7 +12,7 @@ $(() => {
   authEvents.addHandlers()
   crudGearEvents.addHandlers()
   crudProjectEvents.addHandlers()
-  notificationPupUps()
+  notificationPupUps
 })
 
 // use require with a reference to bundle the file and use it in this file

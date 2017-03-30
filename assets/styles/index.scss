@@ -54,8 +54,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   font-size: 13px;
 }
 
-.main-title {
-  font-family: pacifico;
+.main-title, .portfolio {
+  font-family: 'Kaushan Script', cursive;
+  color: #51AAAA;
 }
 
 .home-view {
@@ -74,7 +75,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   text-align: center;
   color: white;
   margin-left: 2.5%;
-  width: 25%;
+  width: 28%;
   padding: 2px;
   font-family: 'Muli', sans-serif;
   font-size: 20px;
@@ -91,7 +92,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .nav {
   margin-bottom: 48px;
-  // opacity: 0.95;
 }
 
 .nav ul {
