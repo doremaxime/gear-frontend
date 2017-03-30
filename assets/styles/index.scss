@@ -70,10 +70,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .gear-table,
 .project-table {
   float: left;
-  background: #232526;
-  background: -webkit-linear-gradient(to left, #232526 , #414345);
-  background: linear-gradient(to left, #232526 , #414345);
-  opacity: 0.8;
+  background: rgba(25, 29, 33, 0.9);
   text-align: center;
   color: white;
   margin-left: 2.5%;
@@ -82,6 +79,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   font-family: 'Muli', sans-serif;
   font-size: 20px;
   overflow: auto;
+}
+
+[draggable=true] {
+    cursor: auto;
+}
+
+.resizable {
+    overflow: scroll;
+    resize: both;
+    max-width: 600px;
+    max-height: 600px;
 }
 
 .primary-content,
@@ -116,7 +124,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .nav ul > li {
-  float: left;
+  float: right;
   position: relative;
 }
 
@@ -159,7 +167,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .nav5 li ul {
   position: absolute;
   left: 0;
-  top: 65px;
+  top: 64px;
   z-index: 1;
   max-height: 0;
   // overflow: hidden;
@@ -169,6 +177,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   -moz-transition: 350ms;
   -o-transition: 350ms;
   transition: 350ms;
+}
+
+.btn-success {
+  margin: 0, auto;
+  width: 100%;
 }
 
 .input-field-sign-up {
@@ -212,6 +225,10 @@ input {
 
 .modal-title {
   color: #232526;
+}
+
+.modal-open {
+  overflow: inherit;
 }
 
 tbody,

@@ -9,12 +9,6 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-
-  <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
-  <!-- <script src="js/jquery.notification.min.js"></script> -->
-  <!-- <link rel="stylesheet" href="css/jquery.notification.css"> -->
-  <!-- <script src="notify.js"></script> -->
-
   <!-- Do not add `script` tags unless you know what you are doing -->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
@@ -101,10 +95,16 @@
     <nav class="nav nav5">
       <ul>
         <li>
-          <a href="#">Add Gear</a>
+          <a class="sign-out">Sign Out</a>
+        </li>
+        <li>
+          <a href="#">Change Password</a>
           <ul>
-            <div class="add-gear">
-              <div>
+            <form class="change-password">
+              <input class="clear-input" type="password" name="passwords[old]" value="" placeholder="Old Password"><br>
+              <input class="clear-input" type="password" name="passwords[new]" value="" placeholder="New Password">
+              <input class="btn btn-success" type="submit" name="submit" value="Submit">
+            </form>
           </ul>
         </li>
         <li>
@@ -115,17 +115,11 @@
           </ul>
         </li>
         <li>
-          <a href="#">Change Password</a>
+          <a href="#">Add Gear</a>
           <ul>
-            <form class="change-password">
-              <input class="clear-input" type="password" name="passwords[old]" value="" placeholder="Old Password"><br>
-              <input class="clear-input" type="password" name="passwords[new]" value="" placeholder="New Password"><br>
-              <input class="btn btn-success" type="submit" name="submit" value="Submit">
-            </form>
+            <div class="add-gear">
+              <div>
           </ul>
-        </li>
-        <li>
-          <a class="sign-out">Sign Out</a>
         </li>
       </ul>
     </nav>
@@ -136,7 +130,7 @@
     <div class="gear-table">
     </div>
 
-    <div class="project-table">
+    <div class="project-table resizable" draggable="true">
     </div>
 
     </div>
