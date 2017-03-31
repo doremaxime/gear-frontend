@@ -3,75 +3,49 @@
 const indexMyGearHandlerbars = require('../templates/index-my-gear.handlebars')
 const AddGearHandlerbars = require('../templates/add-gear.handlebars')
 
-// function countObj (obj) {
-//   let i = 0
-//   for (const key in obj) {
-//     ++i
-//   }
-//   return i
-// }
-
-// this function will make the div shake left to right quickly when called
-// function shakeForm () {
-//   let l = 20
-//   for (let i = 0; i < 10; i++)
-//     $('.row').animate({
-//       'margin-left': '+=' + (l = -l) + 'px',
-//       'margin-right': '-=' + l + 'px'
-//     }, 50)
-// }
-
 const indexGearSuccess = (data) => {
-  // when user signs in, her resources are automatically indexed.
+  // when user signs in, resources are automatically indexed.
   const indexMyGearHtml = indexMyGearHandlerbars({
     my_gears: data.my_gears
   })
-    $('.gear-table').html(indexMyGearHtml)
+  $('.gear-table').html(indexMyGearHtml)
 
   // injects the add-gear-form into the "add gear" nav bar
   $('.add-gear').html(AddGearHandlerbars)
 }
 
-const createGearSuccess = (data) => {
-  console.log(data)
-  // $('.home-view-message').text('You have successfully added your gear.')
+const createGearSuccess = () => {
   $.notify('Sweet gear 😎', 'success')
 }
 
-const createGearFailure = (error) => {
-  console.log(error)
-  // $('.home-view-message').text('You have not successfully created your gear.')
+const createGearFailure = () => {
   $.notify('Oh dear... something went wrong 😳', 'error')
 }
 
-const updateGearSuccess = (data, id) => {
-  console.log(data)
-  // $('.home-view-message').text('You have successfully updated your gear.')
+const updateGearSuccess = (id) => {
   $.notify('Updated 👍', 'success')
+
+  // without these two lines, modal does not fully dissapears and blocks user from
+  // further interactions with window.
   $('.updateGearModal' + id).modal('toggle')
   $('.modal-backdrop').remove()
 }
 
-const updateGearFailure = (error) => {
-  console.log(error)
-  // $('.home-view-message').text('You have not successfully updated your gear.')
+const updateGearFailure = () => {
   $.notify('Oh dear... something went wrong 😳', 'error')
-  // shakeForm()
 }
 
-const destroyGearSuccess = (data, id) => {
-  console.log(data)
-  // $('.home-view-message').text('You have successfully deleted your gear.')
+const destroyGearSuccess = (id) => {
   $.notify('Deleted', 'success')
+
+  // without these two lines, modal does not fully dissapears and blocks user from
+  // further interactions with window.
   $('.destroyGearModal' + id).modal('toggle')
   $('.modal-backdrop').remove()
 }
 
-const destroyGearFailure = (error) => {
-  console.log(error)
-  // $('.home-view-message').text('You have not successfully deleted your gear.')
+const destroyGearFailure = () => {
   $.notify('Oh dear... something went wrong 😳', 'error')
-  // shakeFromAuthUi.shakeForm()
 }
 
 module.exports = {

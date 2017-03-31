@@ -5,8 +5,8 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
 
-// User can sign up
-const onSignUp = function (event) {
+// User can sign up and be automatically signed in.
+const onSignUp = function(event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
@@ -17,36 +17,36 @@ const onSignUp = function (event) {
     }
   }
   api.signUp(data)
-  .then(() => {
-    api.signIn(signInData)
-      .then((response) => {
-        store.user = response.user
-        return store.user
-      })
-      .then(ui.signInSuccess)
-      .catch(ui.signUpFailure)
-  })
+    .then(() => {
+      api.signIn(signInData)
+        .then((response) => {
+          store.user = response.user
+          return store.user
+        })
+        .then(ui.signInSuccess)
+        .catch(ui.signUpFailure)
+    })
     .then(ui.success)
     .catch(ui.signUpFailure)
 }
 
 // User can sign in
-const onSignIn = function (event) {
+const onSignIn = function(event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
 
   api.signIn(data)
-  .then((response) => {
-    store.user = response.user
-    return store.user
-  })
+    .then((response) => {
+      store.user = response.user
+      return store.user
+    })
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
 }
 
-// User can change her password
-const onChangePassword = function (event) {
+// User can change password
+const onChangePassword = function(event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
@@ -57,7 +57,7 @@ const onChangePassword = function (event) {
 }
 
 // User can sign out
-const onSignOut = function (event) {
+const onSignOut = function(event) {
   event.preventDefault()
 
   api.signOut()
@@ -75,9 +75,10 @@ const addHandlers = () => {
   $('.change-password').on('submit', onChangePassword)
   $('.sign-out').on('click', onSignOut)
 
+  // Shows the sign up form when user clicks on 'new user'
   $('.dropdown-button').dropdown()
   $('.modal').modal()
-  $('.signup-toggle').click(function () {
+  $('.signup-toggle').click(function() {
     $(this).hide()
     $('.signupForm').show(300)
     $('.policy').css('visibility', 'visible')

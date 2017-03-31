@@ -3,7 +3,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const indexProject = function () {
+const indexProject = function() {
   return $.ajax({
     url: config.apiOrigin + '/projects',
     method: 'GET',
@@ -13,7 +13,7 @@ const indexProject = function () {
   })
 }
 
-const showProject = function (id) {
+const showProject = function(id) {
   return $.ajax({
     url: config.apiOrigin + '/projects/' + id,
     method: 'GET',
@@ -23,7 +23,7 @@ const showProject = function (id) {
   })
 }
 
-const createProject = function (data) {
+const createProject = function(data) {
   return $.ajax({
     url: config.apiOrigin + '/projects',
     method: 'POST',
@@ -34,7 +34,7 @@ const createProject = function (data) {
   })
 }
 
-const updateProject = function (data, id) {
+const updateProject = function(data, id) {
   return $.ajax({
     url: config.apiOrigin + '/projects/' + id,
     method: 'PATCH',
@@ -45,7 +45,7 @@ const updateProject = function (data, id) {
   })
 }
 
-const destroyProject = function (id) {
+const destroyProject = function(id) {
   return $.ajax({
     url: config.apiOrigin + '/projects/' + id,
     method: 'DELETE',

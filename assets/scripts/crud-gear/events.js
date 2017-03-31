@@ -5,14 +5,14 @@ const api = require('./api')
 const ui = require('./ui')
 
 // Gets all the gear
-const onIndexGear = function () {
+const onIndexGear = function() {
   api.indexGear()
     .then(ui.indexGearSuccess)
     .catch(ui.indexGearFailure)
 }
 
 // Creates a new gear
-const onCreateGear = function (event) {
+const onCreateGear = function(event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
@@ -23,7 +23,7 @@ const onCreateGear = function (event) {
 }
 
 // Updates a gear
-const onUpdateGear = function (event) {
+const onUpdateGear = function(event) {
   event.preventDefault()
 
   const userInput = getFormFields(event.target)
@@ -36,14 +36,10 @@ const onUpdateGear = function (event) {
 }
 
 // Deletes a gear
-const onDestroyGear = function (event) {
-  // event.preventDefault()
-
-  // const id = getFormFields(event.target).my_gear.id
-  // console.log(id)
+const onDestroyGear = function(event) {
+  event.preventDefault()
 
   const id = $(event.target).data('id')
-  console.log('id is ', id)
 
   api.destroyGear(id)
     .then(ui.destroyGearSuccess(id))

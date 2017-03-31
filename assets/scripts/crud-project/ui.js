@@ -2,72 +2,50 @@
 
 const indexProjectsHandlerbars = require('../templates/index-projects.handlebars')
 const AddProjectHandlerbars = require('../templates/add-project.handlebars')
-// const shakeFromAuthUi = require('../auth/ui')
-// const countObj = require('../crud-gear/ui.js')
-
-function countObj (obj) {
-  let i = 0
-  for (const key in obj) {
-    ++i
-  }
-  return i
-}
 
 const indexProjectSuccess = (data) => {
   // when user signs in, her resources are automatically indexed.
   const indexProjectsHtml = indexProjectsHandlerbars({
     projects: data.projects
   })
-  // if (countObj(data) !== 0) {
-    $('.project-table').html(indexProjectsHtml)
-  // } else {
-  //   $.notify('Add your project!', 'success')
-  // }
+  $('.project-table').html(indexProjectsHtml)
 
-  // injects the add-project-form into the "add project" nav bar
+  // inserts the add-project-form into the "add project" nav bar
   $('.add-project').html(AddProjectHandlerbars)
 }
 
-const createProjectSuccess = (data) => {
-  console.log(data)
-  // $('.home-view-message').text('You have successfully added your project.')
+const createProjectSuccess = () => {
   $.notify('Added !', 'success')
 }
 
-const createProjectFailure = (error) => {
-  console.log(error)
-  // $('.home-view-message').text('You have not successfully created your project.')
+const createProjectFailure = () => {
   $.notify('Oh dear... something went wrong 😳', 'error')
 }
 
-const updateProjectSuccess = (data, id) => {
-  console.log(data)
-  // $('.home-view-message').text('You have successfully updated your project.')
+const updateProjectSuccess = (id) => {
+  // without these two lines, modal does not fully dissapears and blocks user from
+  // further interactions with window.
   $('.updateProjectModal' + id).modal('toggle')
   $('.modal-backdrop').remove()
+
   $.notify('Ok, all up to date!', 'success')
 }
 
-const updateProjectFailure = (error) => {
-  console.log(error)
+const updateProjectFailure = () => {
   $.notify('Oh dear... something went wrong 😳', 'error')
-  // $('.home-view-message').text('You have not successfully updated your project.')
-  // shakeFromAuthUi.shakeForm()
 }
 
-const destroyProjectSuccess = (data, id) => {
-  console.log(data)
+const destroyProjectSuccess = (id) => {
   $.notify('Deleted', 'success')
-  // $('.home-view-message').text('You have successfully deleted your project.')
+
+  // without these two lines, modal does not fully dissapears and blocks user from
+  // further interactions with window.
   $('.destroyProjectModal' + id).modal('toggle')
   $('.modal-backdrop').remove()
 }
 
-const destroyProjectFailure = (error) => {
-  console.log(error)
+const destroyProjectFailure = () => {
   $.notify('Oh dear... something went wrong 😳', 'error')
-  // $('.home-view-message').text('You have not successfully deleted your project.')
-  // shakeFromAuthUi.shakeForm()
 }
 
 module.exports = {

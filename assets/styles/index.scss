@@ -28,7 +28,6 @@ body {
 .signupForm {
   display: none;
   margin-left: 30px;
-  // padding-left: 20px;
   margin-right: -20px;
 }
 
@@ -64,10 +63,6 @@ body {
   font-family: 'Muli', sans-serif;
 }
 
-// .home-view-message {
-//   background: #ee6e73;
-// }
-
 .gear-table,
 .project-table {
   float: left;
@@ -76,7 +71,6 @@ body {
   text-align: center;
   color: white;
   margin-left: 2.5%;
-  // width: 28%;
   padding: 2px;
   font-family: 'Muli', sans-serif;
   font-size: 20px;
@@ -90,7 +84,6 @@ body {
 .project-table:empty
 { display: none
 }
-
 
 .primary-content,
 .sidebar {
@@ -116,10 +109,6 @@ body {
 .nav ul:before {
   content: "";
   display: table;
-}
-
-.nav ul:after {
-  // clear: both;
 }
 
 .nav ul > li {
@@ -169,7 +158,6 @@ body {
   top: 64px;
   z-index: 1;
   max-height: 0;
-  // overflow: hidden;
   -webkit-transform: perspective(400) rotate3d(1, 0, 0, -90deg);
   -webkit-transform-origin: 50% 0;
   -webkit-transition: 350ms;

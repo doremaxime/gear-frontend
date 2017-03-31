@@ -11,12 +11,13 @@ const signUpSuccess = () => {
 const signUpFailure = () => {
   $('.clear-input').val('')
   $.notify("Email taken or passwords don't match", 'error')
-  // shakeForm()
 }
 
 const signInSuccess = () => {
+  // fetches user resources on log in.
   gearEvents.onIndexGear()
   projectEvents.onIndexProject()
+
   $('.landing-page-container').css('display', 'none')
   $('.home-view').css('display', 'unset')
   $('.clear-input').val('')
@@ -24,21 +25,17 @@ const signInSuccess = () => {
 
 const signInFailure = () => {
   $('.clear-input').val('')
-  // shakeForm()
   $.notify('Invalid email or password', 'error')
 }
 
 const changePasswordSuccess = () => {
-  // $('.home-view-message').text('You have successfully changed password.')
   $.notify('Password changed', 'success')
   $('.clear-input').val('')
 }
 
 const changePasswordFailure = () => {
-  // $('.home-view-message').text('error, please try again.')
-  $.notify('Old password is not correct', 'error')
+  $.notify('There was an error, please try again.', 'error')
   $('.clear-input').val('')
-  // shakeForm()
 }
 
 const signOutSuccess = () => {
@@ -47,6 +44,7 @@ const signOutSuccess = () => {
   $('.home-view').css('display', 'none')
   $.notify('Come again soon!', 'success')
 
+  // clears the user resources for next user.
   $('.project-table').html(empty)
   $('.gear-table').html(empty)
 }

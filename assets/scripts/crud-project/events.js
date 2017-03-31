@@ -5,14 +5,14 @@ const api = require('./api')
 const ui = require('./ui')
 
 // Gets all the project
-const onIndexProject = function () {
+const onIndexProject = function() {
   api.indexProject()
     .then(ui.indexProjectSuccess)
     .catch(ui.indexProjectFailure)
 }
 
 // Creates a new project
-const onCreateProject = function (event) {
+const onCreateProject = function(event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
@@ -23,7 +23,7 @@ const onCreateProject = function (event) {
 }
 
 // Updates a project
-const onUpdateProject = function (event) {
+const onUpdateProject = function(event) {
   event.preventDefault()
 
   const userInput = getFormFields(event.target)
@@ -36,11 +36,10 @@ const onUpdateProject = function (event) {
 }
 
 // Deletes a project
-const onDestroyProject = function (event) {
+const onDestroyProject = function(event) {
   event.preventDefault()
 
   const id = $(event.target).data('id')
-  console.log('id is ', id)
 
   api.destroyProject(id)
     .then(ui.destroyProjectSuccess(id))
