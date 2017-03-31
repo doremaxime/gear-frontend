@@ -39,6 +39,12 @@ As a user I want to:
 ![Log in view](app.png "App")
 ![Home view](app2.png "App")
 
+##### Proposed Architecture
+
+I wanted a user to own his/her gear and projects, but not have gear and projects have a relationship.
+In the future, I may link the two in order to have users specific gear for specific projects.
+
+
 ## Technologies used
 
 I use a Mac Air '10 which was a nuance as it has become quite slow and each task took a few more seconds which all in all added hours. everything was tested using Chrome and was developed with Atom.
