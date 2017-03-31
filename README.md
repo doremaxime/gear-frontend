@@ -1,18 +1,14 @@
-## about
+## About
 
-This is a SPA that lets user keep a record of all their gear and projects.
+This is a frontend repo for a Single Page Application that lets user keep a record of all their gear and projects.
 
-I took multiple approaches for this project.
-This is because I had to balance all the tools at my disposal and the fact that
-I only had less that a week to meet all the requirements.
+I took two approaches for this project. This is because I had to balance all the tools at my disposal and the fact that I only had less than a week to meet all the requirements.
 
-Therefore, I first deployed my app without a framework and used JQuery and AJAX
-instead. In 2 days I had met the requirements and all user stories were complete
-with all facets being functional. Since I had done this before I knew it would
-be quick with no major hurdles.
+I first deployed my app without a framework and used JQuery and AJAX instead. Since I had done this before I knew it would be quick with no major hurdles and it seemed promising within 2 days.
 
-With 4 days left and no worries on my shoulders, I took on the challenge of
-implementing Ember as the frontend framework.
+With 4 days left, I took on the challenge of implementing Ember as the frontend framework. After making no progress after 2 days, I decided to go back to the other version (this one) and improve it: adding a second resource to the backend, great visuals, slick functionality, and overcoming hurdles.
+
+One of the tougher challenges, was users being able to see a previous user's resources for a second before the handlebars injected the current user's resources. I overcame this after many different approaches. However, the last, which was the most simple, was successful. I created an empty handlebar which would be inserted (and replace the past handlebar) when a user signed out. Therefore, old data is not 'hidden' behind other divs, but is removed totaly from the browser.
 
 ## Dependencies
 
@@ -20,9 +16,7 @@ npm install
 
 ## User Stories
 
-Users are intende to be rock climbers. As a climber myself I know how annoying
-it is to always count how much of this or that gear you have, so this appear
-will get rid of this nuance.
+Users are intended to be rock climbers. As a climber myself I know how annoying it is to always count how much of this or that gear you have, so this appear will get rid of this nuance.
 
 As a user I want to:
 - Sign up
@@ -42,15 +36,13 @@ As a user I want to:
 
 ![Wireframe](wireframe.JPG "Wireframe")
 ![ERD](ERD.JPG "ERD")
-![App](app.png "App")
-![App](app2.png "App")
-
+![Log in view](app.png "App")
+![Home view](app2.png "App")
 
 ## Technologies used
 
-- Mac Air '10, Chrome, Atom
-- Front-end: Javascript, SCSS, Handlebars, AJAX, JQuery
-- Back-end: Ruby, Rails, PostgreSQL, Heroku
+I use a Mac Air '10 which was a nuance as it has become quite slow and each task took a few more seconds which all in all added hours. everything was tested using Chrome and was developed with Atom.
+Everything in the front-end is developed with Javascript, AJAX, JQuery, handlebars, SCSS, Bootstrap, and HTML.
 
 ## Links & URLs
 
