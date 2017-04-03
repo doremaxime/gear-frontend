@@ -22,7 +22,7 @@
                   <h4 class="modal-title" id="createProjectModalLabel">Update Project</h4>
                   <br>
                   <form class="update-project" data-id="{{project.id}}">
-                    <input class="clear-input modal-input" type="text" required name="project[comment]" data-char-limit="13" maxlength="13" value="" placeholder="comment">
+                    <input class="clear-input modal-input" type="text" required name="project[comment]" data-char-limit="200" maxlength="200" value="" placeholder="comment">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <input data-id="{{project.id}}" type="submit" class="btn update-project btn-primary" name="submit" value="Submit">
                   </form>
