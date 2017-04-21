@@ -6,6 +6,7 @@ const authEvents = require('./auth/events.js')
 const crudGearEvents = require('./crud-gear/events.js')
 const crudProjectEvents = require('./crud-project/events.js')
 const notificationPupUps = require('./notification')
+const weather = require('./weather/events.js')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -13,6 +14,7 @@ $(() => {
   crudGearEvents.addHandlers()
   crudProjectEvents.addHandlers()
   notificationPupUps
+  weather.addHandlers()
 })
 
 // use require with a reference to bundle the file and use it in this file

@@ -3,6 +3,8 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
+const store = require('../store')
+const config = require('../config')
 
 // Gets all the project
 const onIndexProject = function() {
