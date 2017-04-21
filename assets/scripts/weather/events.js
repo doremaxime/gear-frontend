@@ -5,8 +5,8 @@
 const store = require('../store')
 const config = require('../config')
 
-const searchSoundsApiByQuery = function () {
-  const searchText = $('.search').val()
+const searchWeatherApiByQuery = function () {
+  const searchText = $('.weather-input-search').val()
   const data = {
     search: {
       query: searchText
@@ -21,25 +21,17 @@ const searchSoundsApiByQuery = function () {
     data: data
   }).done(function (results) {
     console.log(results)
-    // $('.search-results').empty()
-    // if (results.count == 0) {
-    //   $('.message').text('No Results')
-    // } else if (results.count > 0) {
-    //   for (let i = 0; i < results.results.length; i++) {
-    //     const singleSearchResult = soundsTemplate(results.results[i])
-    //     $('.search-results').append(singleSearchResult)
-    //   }
-    //   apiUi.searchSoundsSuccess()
-    // }
+    const searchResult = ('<h3>' + results.name + '</h3> <p>' + '<img src="http://openweathermap.org/img/w/' + results.weather[0].icon + '.png"' + '</p> <p> Temp: ' + results.main.temp + '°F </p> <p> Cloudiness: ' + results.clouds.all + '% </p> <p> Wind: ' + results.wind.speed + 'mph </p>')
+    $('.weather-api-response').html(searchResult)
   })
-  $('.search').val('')
+  $('.weather-input-search').val('')
 }
 
 const addHandlers = () => {
-  $('.project-table').on('click', '.search-button', searchSoundsApiByQuery)
+  $('.weather-table').on('click', '.search-button', searchWeatherApiByQuery)
 }
 
 module.exports = {
-  searchSoundsApiByQuery,
+  searchWeatherApiByQuery,
   addHandlers
 }

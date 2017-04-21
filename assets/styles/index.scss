@@ -64,7 +64,8 @@ body {
 }
 
 .gear-table,
-.project-table {
+.project-table,
+.weather-table {
   float: left;
   display: inline-block;
   background: rgba(25, 29, 33, 0.9);
@@ -78,11 +79,17 @@ body {
 }
 
 .gear-table:empty {
-  display: none
+  display: none;
 }
 
-.project-table:empty
-{ display: none
+.project-table:empty {
+  display: none;
+}
+
+.weather-api-response {
+  background: rgba(74, 128, 241, 0.4);
+  border-radius: 5%;
+  margin: 6%;
 }
 
 .primary-content,
@@ -194,6 +201,12 @@ body {
   border-radius: 0.5em;
   padding-left: 10%;
   padding-right: 10%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  font-size: 20px;
 }
 
 input {

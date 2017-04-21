@@ -47,6 +47,7 @@ const signOutSuccess = () => {
   // clears the user resources for next user.
   $('.project-table').html(empty)
   $('.gear-table').html(empty)
+  $('.weather-table').html(empty)
 }
 
 module.exports = {

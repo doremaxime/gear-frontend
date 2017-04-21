@@ -1,6 +1,7 @@
 'use strict'
 
 const indexProjectsHandlerbars = require('../templates/index-projects.handlebars')
+const indexWeatherHandlerbars = require('../templates/index-weather.handlebars')
 const AddProjectHandlerbars = require('../templates/add-project.handlebars')
 
 const indexProjectSuccess = (data) => {
@@ -9,6 +10,10 @@ const indexProjectSuccess = (data) => {
     projects: data.projects
   })
   $('.project-table').html(indexProjectsHtml)
+  const indexWeatherHtml = indexWeatherHandlerbars({
+    projects: data.projects
+  })
+  $('.weather-table').html(indexWeatherHtml)
 
   // inserts the add-project-form into the "add project" nav bar
   $('.add-project').html(AddProjectHandlerbars)
