@@ -21,7 +21,7 @@ const searchWeatherApiByQuery = function () {
     data: data
   }).done(function (results) {
     console.log(results)
-    const searchResult = ('<h3>' + results.name + '</h3> <p>' + '<img src="http://openweathermap.org/img/w/' + results.weather[0].icon + '.png"' + '</p> <p> Temp: ' + results.main.temp + '°F </p> <p> Cloudiness: ' + results.clouds.all + '% </p> <p> Wind: ' + results.wind.speed + 'mph </p>')
+    const searchResult = ('<br><h3>' + results.name + '</h3> <p>' + '<img src="http://openweathermap.org/img/w/' + results.weather[0].icon + '.png"' + '</p> <p> Temp: ' + results.main.temp + '°F </p> <p> Cloudiness: ' + results.clouds.all + '% </p> <p> Wind: ' + results.wind.speed + 'mph </p><br>')
     $('.weather-api-response').html(searchResult)
   })
   $('.weather-input-search').val('')
