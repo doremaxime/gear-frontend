@@ -1,31 +1,49 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-@import url( 'https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+$input-cart-border: #2196f3;
+$login-border: #ddd;
+$legal-border: #ddd;
+$portfolio: #51aaaa;
+$tables-background: rgba(25, 29, 33, .9);
+$tables-color: #fff;
+$weather-api-response-background: rgba(74, 128, 241, .4);
+$nav-ul-background: #333;
+$nav-a-background: #595959;
+$nav-a-border: #595959;
+$nav-a-color: #fff;
+$nav-li-ul-background: #273754;
+$nav-li-ul-a-background: rgba(0, 0, 0, .19999999999999996);
+$modal-input-background: #232526;
+$modal-background-color: rgba(255, 255, 255, 0);
+$modal-title-color: #232526;
 
 body {
-  background-image: url("https://raw.githubusercontent.com/doremaxime/gear-frontend/master/assets/styles/images/gear-pic.jpg");
-  background-size: cover;
-  background-position: center;
   background-attachment: fixed;
+  background-image: url('https://raw.githubusercontent.com/doremaxime/gear-frontend/master/assets/styles/images/gear-pic.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 .input-cart {
-  min-height: 400px;
-  border-top: 3px solid #2196F3;
-  margin-top: 80px;
+  border-top: 3px solid $input-cart-border;
   margin-bottom: 100px;
+  margin-top: 80px;
+  min-height: 400px;
 }
 
 .login {
+  border-right: 1px solid $login-border;
   margin-top: 25px;
-  border-right: 1px solid #ddd;
 }
 
 .policy {
+  font-size: 13px;
   visibility: hidden;
 }
 
-.signupForm {
+.signup-form {
   display: none;
   margin-left: 30px;
   margin-right: -20px;
@@ -46,17 +64,13 @@ body {
 }
 
 .legal {
-  border-top: 1px solid #ddd;
-}
-
-.policy {
-  font-size: 13px;
+  border-top: 1px solid $legal-border;
 }
 
 .main-title,
 .portfolio {
+  color: $portfolio;
   font-family: 'Kaushan Script', cursive;
-  color: #51AAAA;
 }
 
 .home-view {
@@ -67,16 +81,16 @@ body {
 .gear-table,
 .project-table,
 .weather-table {
-  float: left;
+  background: $tables-background;
+  color: $tables-color;
   display: inline-block;
-  background: rgba(25, 29, 33, 0.9);
-  text-align: center;
-  color: white;
-  margin-left: 2.5%;
-  padding: 2px;
+  float: left;
   font-family: 'Muli', sans-serif;
   font-size: 20px;
+  margin-left: 2.5%;
   overflow: auto;
+  padding: 2px;
+  text-align: center;
 }
 
 .gear-table:empty {
@@ -92,7 +106,7 @@ body {
 }
 
 .weather-api-response {
-  background: rgba(74, 128, 241, 0.4);
+  background: $weather-api-response-background;
   margin: 6%;
 }
 
@@ -100,8 +114,8 @@ body {
 .sidebar {
   float: none;
   margin: 0 auto;
-  width: 100%;
   max-width: 480px;
+  width: 100%;
 }
 
 .nav {
@@ -109,16 +123,16 @@ body {
 }
 
 .nav ul {
-  *zoom: 1;
+  background: $nav-ul-background;
   list-style: none;
   margin: 0;
   padding: 0;
-  background: #333;
+  zoom: 1;
 }
 
 .nav ul:after,
 .nav ul:before {
-  content: "";
+  content: '';
   display: table;
 }
 
@@ -128,20 +142,20 @@ body {
 }
 
 .nav a {
-  padding: 10px 20px;
-  line-height: 1.7em;
-  color: #fff;
-  border-left: 1px solid #595959;
+  border-left: 1px solid $nav-a-border;
+  color: $nav-a-color;
   font-size: 1.7rem;
+  line-height: 1.7em;
+  padding: 10px 20px;
 }
 
 .nav a:hover {
+  background: $nav-a-background;
   text-decoration: none;
-  background: #595959;
 }
 
 .nav li ul {
-  background: #273754;
+  background: $nav-li-ul-background;
   opacity: none;
 }
 
@@ -150,11 +164,11 @@ body {
 }
 
 .nav li ul a {
-  border: none;
+  border: 0;
 }
 
 .nav li ul a:hover {
-  background: rgba(0, 0, 0, 0.19999999999999996);
+  background: $nav-li-ul-a-background;
 }
 
 .nav5 ul > li:hover ul {
@@ -163,17 +177,17 @@ body {
 }
 
 .nav5 li ul {
-  position: absolute;
   left: 0;
-  top: 64px;
-  z-index: 1;
   max-height: 0;
+  position: absolute;
+  top: 64px;
   -webkit-transform: perspective(400) rotate3d(1, 0, 0, -90deg);
   -webkit-transform-origin: 50% 0;
   -webkit-transition: 350ms;
   -moz-transition: 350ms;
   -o-transition: 350ms;
   transition: 350ms;
+  z-index: 1;
 }
 
 .btn-success {
@@ -182,9 +196,9 @@ body {
 }
 
 .input-field-sign-up {
+  margin-bottom: -30px;
   padding-left: 20%;
   padding-right: 20%;
-  margin-bottom: -30px;
 }
 
 .input-field-sign-up-top {
@@ -201,7 +215,7 @@ body {
 }
 
 .clear-input {
-  border-radius: 0.5em;
+  border-radius: .5em;
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -217,17 +231,17 @@ input {
 }
 
 .modal-input {
-  background: #232526;
+  background: $modal-input-background;
   background: -webkit-linear-gradient(to left, #232526 , #414345);
   background: linear-gradient(to left, #232526 , #414345);
 }
 
 .modal {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: $modal-background-color;
 }
 
 .modal-title {
-  color: #232526;
+  color: $modal-title-color;
 }
 
 .modal-open {
@@ -238,6 +252,7 @@ tbody,
 tr {
   font-size: 20px;
 }
+
 @media (max-width: 500px) {
   .gear-table,
   .project-table,
@@ -253,14 +268,14 @@ tr {
   }
 
   .nav a {
-    border-left: none;
+    border-left: 0;
   }
 
   .nav ul > li {
     float: float;
     margin: auto;
-    width: 100%;
     text-align: center;
+    width: 100%;
   }
 
   .nav5 li ul {

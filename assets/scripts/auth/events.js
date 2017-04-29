@@ -80,7 +80,7 @@ const addHandlers = () => {
   $('.modal').modal()
   $('.signup-toggle').click(function() {
     $(this).hide()
-    $('.signupForm').show(300)
+    $('.signup-form').show(300)
     $('.policy').css('visibility', 'visible')
   })
 }
